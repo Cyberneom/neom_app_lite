@@ -1,0 +1,12 @@
+dependency_overrides:
+  neom_core:
+    path: ../neom_core
+  neom_commons:
+    path: ../neom_commons
+  neom_generator:
+    path: ../neom_generator
+
+#  FUTURE EXPERIMENTAL USE:
+#  neom_vr:
+#    path: ../neom_vr
+  intl: ^0.20.2 # Forzar la versión de intl

@@ -1,0 +1,35 @@
+name: neom_app
+description: "A minimal Flutter application to showcase Open Neom Architecture & Generator."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  neom_core:
+    git:
+      url: git@github.com:Cyberneom/neom_core.git
+  neom_commons:
+    git:
+      url: git@github.com:Cyberneom/neom_commons.git
+  neom_generator:
+    git:
+      url: git@github.com:Cyberneom/neom_generator.git
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+
+  uses-material-design: true
