@@ -1,6 +1,7 @@
 name: open_neom_lite
 description: "A minimal Flutter application to showcase Open Neom Architecture & Generator."
 version: 1.0.0-dev
+homepage: https://github.com/Open-Neom/neom_app_lite
 
 environment:
   sdk: ^3.7.2
