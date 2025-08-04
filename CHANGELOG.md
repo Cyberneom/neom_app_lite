@@ -1,1 +1,1 @@
-## 1.0.0 - First Open Neom - Minimal Version
+## 1.0.0-dev - First Open Neom - Minimal Version
