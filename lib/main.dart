@@ -8,14 +8,13 @@ import 'package:logger/logger.dart';
 import 'package:neom_commons/app_flavour.dart';
 import 'package:neom_commons/ui/theme/app_color.dart';
 import 'package:neom_commons/ui/theme/app_theme.dart';
-import 'package:neom_commons/utils/constants/app_locale_constants.dart';
 import 'package:neom_core/app_config.dart';
 import 'package:neom_core/app_properties.dart';
 import 'package:neom_core/utils/constants/app_route_constants.dart';
 import 'package:neom_core/utils/enums/app_in_use.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:neom_core/utils/enums/app_locale.dart';
-import 'package:open_neom/localization/app_translations.dart';
+import 'package:open_neom_lite/localization/app_translations.dart';
 
 import 'app_routes.dart';
 import 'root_binding.dart';
@@ -50,15 +49,15 @@ void main() async {
     AppConfig.logger.e(e.toString());
   }
 
-  runApp(const OpenNeom());
+  runApp(const OpenNeomLite());
 }
 
-class OpenNeom extends StatelessWidget {
-  const OpenNeom({super.key});
+class OpenNeomLite extends StatelessWidget {
+  const OpenNeomLite({super.key});
 
   @override
   Widget build(BuildContext context) {
-    initializeDateFormatting(AppLocale.spanish.code);
+    initializeDateFormatting(AppLocale.english.code);
     return GetMaterialApp(
       localeListResolutionCallback: (locales, supportedLocales) {
         for (var locale in locales!) {
@@ -79,7 +78,7 @@ class OpenNeom extends StatelessWidget {
       binds: RootBinding().dependencies(),
       enableLog: true,
       translations: AppTranslations(),
-      locale: Locale(AppLocale.spanish.code), // Spanish, Mexico
+      locale: Locale(AppLocale.english.code), // Spanish, Mexico
       fallbackLocale: Locale(AppLocale.spanish.code), // Spanish, Mexico
       supportedLocales: [
         Locale(AppLocale.spanish.code), // Spanish, Mexico

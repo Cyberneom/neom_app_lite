@@ -1,13 +1,17 @@
-
 import 'package:get/get.dart';
 import 'package:neom_commons/ui/on_going_page.dart';
 import 'package:neom_commons/ui/previous_version_page.dart';
 import 'package:neom_commons/ui/splash_page.dart';
 import 'package:neom_commons/utils/app_alerts.dart';
+import 'package:neom_commons/utils/constants/translations/app_translation_constants.dart';
 import 'package:neom_core/ui/root_page.dart';
 import 'package:neom_core/utils/constants/app_route_constants.dart';
-import 'package:neom_generator/neom_generator_routes.dart';
+import 'package:neom_frequencies/frequency_routes.dart';
+import 'package:neom_frequencies/ui/frequency_page.dart';
+import 'package:neom_generator/generator_routes.dart';
+
 import 'package:neom_generator/ui/neom_generator_page.dart';
+import 'package:neom_home/ui/home_page.dart';
 
 class AppRoutes {
 
@@ -16,20 +20,24 @@ class AppRoutes {
       GetPage(
           name: AppRouteConstants.root,
           page: () => RootPage(
-              rootPage: NeomGeneratorPage(), splashPage: SplashPage(),
-              homePage: null, homeService: null,
-              ///UNCOMMENT WHEN IMPORTING NEOM_HOME
-              // HomePage(
-              //   firstPage: TimelinePage(),
-              //   secondPage: EventsPage(),
-              //   thirdPage: BookingHomePage(),
-              //   forthPage: AudioPlayerRootPage()
-              // ), homeService: Get.find<HomeService>(),
+              // rootPage: OnGoingPage(),
+              rootPage: HomePage(
+                firstPage: NeomGeneratorPage(showAppBar: false,),
+                firstTabName: AppTranslationConstants.generator,
+                secondPage: FrequencyPage(showAppBar: false,),
+                secondTabName: AppTranslationConstants.frequencies,
+                // thirdPage: BookingHomePage(),
+                // forthPage: AudioPlayerRootPage()
+              ),
+              splashPage: SplashPage(),
+              homePage: null,
+              homeService: null,
               previousVersionPage: PreviousVersionPage(), onGoingPage: OnGoingPage(),
               showExitConfirmationDialog: AppAlerts.showExitConfirmationDialog),
           transition: Transition.zoom
       ),
-      ...NeomGeneratorRoutes.routes,
+      ...GeneratorRoutes.routes,
+      ...FrequencyRoutes.routes,
       ///UNCOMMENT WHEN IMPORTING NEOM_AUDIO_PLAYER
       // GetPage(
       //   name: AppRouteConstants.audioPlayer,

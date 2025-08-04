@@ -1,4 +1,8 @@
 import 'package:get/get.dart';
+import 'package:neom_core/domain/use_cases/home_service.dart';
+import 'package:neom_generator/domain/use_cases/neom_generator_service.dart';
+import 'package:neom_generator/ui/neom_generator_controller.dart';
+import 'package:neom_home/ui/home_controller.dart';
 
 
 class RootBinding extends Binding {
@@ -6,12 +10,16 @@ class RootBinding extends Binding {
   @override
   List<Bind> dependencies() {
     return [
+      Bind.lazyPut(() => NeomGeneratorController(), fenix: true),
+      Bind.lazyPut<NeomGeneratorService>(() => Get.find<NeomGeneratorController>(), fenix: true),
       // Bind.put(UserController(), permanent: true),
+      // Bind.lazyPut<UserService>(() => Get.find<UserController>(), fenix: true),
+      //
       // Bind.put(LoginController(), permanent: true),
       // Bind.lazyPut<LoginService>(() => Get.find<LoginController>(), fenix: true),
       //
-      // Bind.lazyPut(() => HomeController(), fenix: true),
-      // Bind.lazyPut<HomeService>(() => Get.find<HomeController>(), fenix: true),
+      Bind.lazyPut(() => HomeController(), fenix: true),
+      Bind.lazyPut<HomeService>(() => Get.find<HomeController>(), fenix: true),
       //
       // Bind.lazyPut(() => TimelineController(), fenix: true),
       // Bind.lazyPut<TimelineService>(() => Get.find<TimelineController>(), fenix: true),
@@ -60,7 +68,6 @@ class RootBinding extends Binding {
       //
       // Bind.lazyPut(() => WooMediaAPI(), fenix: true),
       // Bind.lazyPut<WooMediaService>(() => Get.find<WooMediaAPI>(), fenix: true),
-
     ];
   }
 
