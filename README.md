@@ -24,7 +24,7 @@ neom_app is built to:
 📦 Installation
 To get started with neom_app, ensure you have Flutter installed and configured.
 1.	Clone the repository:
-2.	git clone https://github.com/Open-Neom/neom_app.git
+2.	git clone https://github.com/Open-Neom/neom_app_lite.git
 3.	cd neom_app
 
 4.	Install dependencies:
